@@ -5,8 +5,8 @@ echo "Install openstack all-in-one"
 yum install -y centos-release-openstack-ocata
 yum update -y
 yum install -y openstack-packstack
-sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 900/' /usr/share/openstack-puppet/modules/nova/manifests/db/sync.pp
-sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 900/' /usr/share/openstack-puppet/modules/neutron/manifests/db/sync.pp
+sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 1200/' /usr/share/openstack-puppet/modules/nova/manifests/db/sync.pp
+sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 1200/' /usr/share/openstack-puppet/modules/neutron/manifests/db/sync.pp
 packstack --answer-file=./packstack-answers.txt 
 echo "Copy network scripts"
 cp ifcfg-enp3s0f1 /etc/sysconfig/network-scripts/
