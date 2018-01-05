@@ -1,14 +1,19 @@
 #!/bin/bash
 
 echo "Install target is: " $1
-echo "Set dns"
-nmcli con mod enp1s0 ipv4.dns "8.8.8.8"
-nmcli con up enp1s0
 echo "Install openstack all-in-one"
 yum install -y centos-release-openstack-ocata
 yum update -y
 yum install -y openstack-packstack
-packstack --answer-file=./packstack-answers.txt --timeout=600
+sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 900/' /usr/share/openstack-puppet/modules/nova/manifests/db/sync.pp
+sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 900/' /usr/share/openstack-puppet/modules/neutron/manifests/db/sync.pp
+packstack --answer-file=./packstack-answers.txt 
 echo "Copy network scripts"
 cp ifcfg-enp3s0f1 /etc/sysconfig/network-scripts/
 cp ifcfg-br-ex /etc/sysconfig/network-scripts/
+ifdown ifcfg-enp3s0f1
+ifdown br-ex
+ifup ifcfg-enp3s-f1
+ifup br-ex
+systemctl restart openvswitch.service
+
