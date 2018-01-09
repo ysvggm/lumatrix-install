@@ -13,7 +13,7 @@ cp ifcfg-enp3s0f1 /etc/sysconfig/network-scripts/
 cp ifcfg-br-ex /etc/sysconfig/network-scripts/
 ifdown ifcfg-enp3s0f1
 ifdown br-ex
-ifup ifcfg-enp3s-f1
+ifup ifcfg-enp3s0f1
 ifup br-ex
 systemctl restart openvswitch.service
 
