@@ -98,14 +98,14 @@ CONFIG_DEBUG_MODE=n
 
 # Server on which to install OpenStack services specific to the
 # controller role (for example, API servers or dashboard).
-CONFIG_CONTROLLER_HOST=192.168.2.21
+CONFIG_CONTROLLER_HOST=127.0.0.1
 
 # List the servers on which to install the Compute service.
-CONFIG_COMPUTE_HOSTS=192.168.2.21
+CONFIG_COMPUTE_HOSTS=127.0.0.1
 
 # List of servers on which to install the network service such as
 # Compute networking (nova network) or OpenStack Networking (neutron).
-CONFIG_NETWORK_HOSTS=192.168.2.21
+CONFIG_NETWORK_HOSTS=127.0.0.1
 
 # Specify 'y' if you want to use VMware vCenter as hypervisor and
 # storage; otherwise, specify 'n'. ['y', 'n']
@@ -141,11 +141,11 @@ CONFIG_VCENTER_CLUSTER_NAMES=
 
 # (Unsupported!) Server on which to install OpenStack services
 # specific to storage servers such as Image or Block Storage services.
-CONFIG_STORAGE_HOST=192.168.2.21
+CONFIG_STORAGE_HOST=127.0.0.1
 
 # (Unsupported!) Server on which to install OpenStack services
 # specific to OpenStack Data Processing (sahara).
-CONFIG_SAHARA_HOST=192.168.2.21
+CONFIG_SAHARA_HOST=127.0.0.1
 
 # Specify 'y' to enable the EPEL repository (Extra Packages for
 # Enterprise Linux). ['y', 'n']
@@ -282,7 +282,7 @@ CONFIG_SSL_CERT_SUBJECT_MAIL=admin@localhost.localdomain
 CONFIG_AMQP_BACKEND=rabbitmq
 
 # IP address of the server on which to install the AMQP service.
-CONFIG_AMQP_HOST=192.168.2.21
+CONFIG_AMQP_HOST=127.0.0.1
 
 # Specify 'y' to enable SSL for the AMQP service. ['y', 'n']
 CONFIG_AMQP_ENABLE_SSL=n
@@ -304,7 +304,7 @@ CONFIG_AMQP_AUTH_PASSWORD=PW_PLACEHOLDER
 # installation was not specified in CONFIG_MARIADB_INSTALL, specify
 # the IP address of an existing database server (a MariaDB cluster can
 # also be specified).
-CONFIG_MARIADB_HOST=192.168.2.21
+CONFIG_MARIADB_HOST=127.0.0.1
 
 # User name for the MariaDB administrative user.
 CONFIG_MARIADB_USER=root
@@ -352,7 +352,7 @@ CONFIG_KEYSTONE_TOKEN_FORMAT=FERNET
 CONFIG_KEYSTONE_IDENTITY_BACKEND=sql
 
 # URL for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_URL=ldap://192.168.2.21
+CONFIG_KEYSTONE_LDAP_URL=ldap://127.0.0.1
 
 # User DN for the Identity service LDAP backend.  Used to bind to the
 # LDAP server if the LDAP server does not allow anonymous
@@ -1248,10 +1248,10 @@ CONFIG_CEILOMETER_METERING_BACKEND=database
 CONFIG_CEILOMETER_EVENTS_BACKEND=database
 
 # IP address of the server on which to install MongoDB.
-CONFIG_MONGODB_HOST=192.168.2.21
+CONFIG_MONGODB_HOST=127.0.0.1
 
 # IP address of the server on which to install the Redis server.
-CONFIG_REDIS_HOST=192.168.2.21
+CONFIG_REDIS_HOST=127.0.0.1
 
 # Port on which the Redis server listens.
 CONFIG_REDIS_PORT=6379
