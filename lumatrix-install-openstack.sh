@@ -17,4 +17,7 @@ ifdown br-ex
 ifup ifcfg-enp3s0f1
 ifup br-ex
 systemctl restart openvswitch.service
-
+mv /etc/httpd/conf.d/15-default.conf /etc/httpd/conf.d/15-default.conf.bkp
+sed -i 's/ServerAlias 127.0.0.1/## ServerAlias 127.0.0.1/' /etc/httpd/conf.d/15-horizon_vhost.conf
+sed -i 's/ServerAlias ceph-node3/## ServerAlias ceph-node3/' /etc/httpd/conf.d/15-horizon_vhost.conf
+sed -i 's/ServerAlias localhost/## ServerAlias localhost/' /etc/httpd/conf.d/15-horizon_vhost.conf
