@@ -1,5 +1,0 @@
-DEVICE=enp3s0f1
-TYPE=OVSPort
-DEVICETYPE=ovs
-OVS_BRIDGE=br-ex
-ONBOOT=yes
