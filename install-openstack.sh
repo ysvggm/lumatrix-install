@@ -22,3 +22,4 @@ sed -i 's/ServerAlias 127.0.0.1/## ServerAlias 127.0.0.1/' /etc/httpd/conf.d/15-
 sed -i 's/ServerAlias ceph-node3/## ServerAlias ceph-node3/' /etc/httpd/conf.d/15-horizon_vhost.conf
 sed -i 's/ServerAlias localhost/## ServerAlias localhost/' /etc/httpd/conf.d/15-horizon_vhost.conf
 systemctl restart httpd.service
+ip route replace default via 192.168.127.101 dev br-ex
