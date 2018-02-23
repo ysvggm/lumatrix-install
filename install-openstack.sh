@@ -9,7 +9,7 @@ sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 1200/' /usr/share/openstack-
 sed -i 's/$db_sync_timeout = 300/$db_sync_timeout = 1200/' /usr/share/openstack-puppet/modules/neutron/manifests/db/sync.pp
 packstack --answer-file=./packstack-answers.txt 
 echo "Copy network scripts"
-cp /etc/sysconfig/network-scripts/ifcfg-enp5s0 /root/network-scripts/ifcfg-enp5s0.bkp
+cp /etc/sysconfig/network-scripts/ifcfg-enp5s0 /root/ifcfg-enp5s0.bkp
 cp ifcfg-enp5s0 /etc/sysconfig/network-scripts/
 cp ifcfg-br-ex /etc/sysconfig/network-scripts/
 ifdown ifcfg-enp5s0
